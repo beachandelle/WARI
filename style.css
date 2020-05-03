@@ -1,0 +1,252 @@
+  
+body {
+  background-color: #000 ;
+  margin: 0;
+  background-size: 100%;
+}
+
+
+
+header {
+ 
+  background-color: #000;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 50%;
+  width: 100%;
+
+}
+
+
+header h1 {
+  color:  #000;
+  background-image: url(https://i.pinimg.com/564x/a1/65/23/a16523f219806ae940d34c8ab59f4003.jpg);
+  background-position: center;
+  background-size: 100%; 
+  font-family: 'Impact', sans-serif;
+  font-size: 100px;
+  font-weight: 600px;
+  text-align: center;
+  background-color: #031926;
+  padding-top:50px;
+  padding-bottom: 50px;
+  margin:0px;
+}
+
+h1 {
+  color: black;
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  font-weight: 1000px;
+  text-transform: uppercase;
+  padding:10px;
+  margin:0px;
+}
+
+
+h3 {
+  color: #1d857f;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 30px;
+}
+
+
+footer {
+  background-color: #DBE9EE;
+  text-align: center;
+  height: 40%;
+  margin-top: 5%;
+}
+
+table {
+  height: 40%;
+  left: 10%;
+  margin: 50px auto 5px;
+  position: center;
+  width: 95%;
+  table-layout: fixed;
+}
+
+thead th {
+  background-color: #031926;
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+th, td {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px;
+  text-align: center;
+}
+
+tr th{
+  background-color: #423c3c;
+  color: #F4E9CD;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}   
+
+
+.welcome {
+
+  background-color: #DBE9EE;
+  box-sizing: border-box;
+  padding: 3px;
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.search {
+  text-align: right;
+  font-family: 'Lato', sans-serif;
+  color: #423c3c;
+}
+
+.placeholder {
+  font-family: 'Lato', sans-serif;
+}
+ 
+
+/*
+@media screen and (max-width: 1300px) {
+  tr th {
+    font-size: 10px;
+  }
+}
+*/
+
+.short-text { display: none; }
+
+@media (max-width: 1200px) {
+    .short-text { display: inline-block; }
+    .full-text { display: none; }
+}
+
+@media (max-width: 1200px) {
+  
+}
+
+.no-js #loader { 
+  display: none;  
+}
+.js #loader { 
+  display: block; 
+  position: absolute; 
+  left: 100px; 
+  top: 0; 
+}
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("./loader3.gif") center no-repeat #fff;
+  animation-duration: 5s; 
+}
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+.big {
+  font-size: 1.2em;
+  color: black;
+}
+
+.small {
+  font-size: .7em;
+}
+
+.square {
+  width: .7em;
+  height: .7em;
+  margin: .5em;
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  color: black;
+}
+
+.custom-dropdown select {
+  background-color: #8fffd8;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+  color: black;
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";

@@ -1,0 +1,262 @@
+ <!DOCTYPE html>
+ <head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="./js/library.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/modernizr.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1 id="place_title">TAYABAS</h1>
+    </div>
+  </header>
+
+<div class="welcome">
+  <h1>Weather Agri-Application for Real-time Information</h1>
+</div>
+<div class="se-pre-con"></div>
+
+<select id="places_choice" onchange="setPlace()">
+  <option value="agdangan">Agdangan</option>
+  <option value="candelaria">Candelaria</option>
+  <option value="lucban">Lucban</option>
+  <option value="lucena">Lucena</option>
+  <option value="sariaya">Sariaya</option>
+  <option value="tayabas">Tayabas</option>
+  <option value="tiaong">Tiaong</option>
+</select>
+
+<div>
+  <table id="weeks">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th><span class="short-text">Monday</span></th>
+        <th><span class="short-text">Tuesday</span></th>
+        <th><span class="short-text">Wednesday</span></th>
+        <th><span class="short-text">Thursday</span></th> 
+        <th><span class="short-text">Friday</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Temp</th>
+          <td>26°</td>
+          <td>26°</td> 
+          <td>24°</td>
+          <td>25°</td>
+          <td>26°</td>
+      </tr>
+      <tr>
+        <th>Humid</th>
+          <td>89</td>
+          <td>85</td>
+          <td>90</td>
+          <td>81</td>
+          <td>77</td>
+      </tr>
+       <tr>
+        <th>Rain</th>
+          <td>1</td>
+          <td>0</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0p</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Plants</th>
+        <th>Definition</th>
+        <th>Planting Time</th>
+      </tr>
+    </thead>
+    <tbody id="plants">
+        <tr id="okra">
+          <td>Okra</td>
+          <td>Okra is a coarse, erect, branched, more or less hairy, annual herb.</td>
+          <td>8 weeks</td>
+        </tr>
+        <tr id="patola">
+          <td>Patola</td>
+          <td>Patola, a vegetable, is a coarse, annual, herbaceous vine.</td>
+          <td>14 weeks</td>
+        </tr>
+        <tr id="talong">
+          <td>Talong</td>
+          <td>Talong is a coarse, usually branched, prickly or unarmed, erect, half-woody plant.</td>
+          <td>10 weeks</td>
+        </tr>
+        <tr id="upo">
+          <td>Upo</td>
+          <td>Upo is a coarse vine reaching a length of several meters.</td>
+          <td>10 weeks</td>
+        </tr>
+        <tr id="luya">
+          <td>Luya</td>
+          <td>Luya is an erect, smooth plant arising from thickened, very aromatic rootstocks. </td>
+          <td>32 weeks</td>
+        </tr>
+        <tr id="ampalaya">
+          <td>Ampalaya</td>
+          <td>Ampalaya is a climbing vine, nearly or quite smooth, annual vine.</td>
+          <td>10 weeks</td>
+        </tr>
+        <tr id="kamatis">
+          <td>Kamatis</td>
+          <td>Kamatis is a hairy annual herb, typically growing 1 to 3 meters in height, with ascending or spreading hairy and branched stems.</td>
+          <td>12 weeks</td>
+        </tr>
+        <tr id="sitaw">
+          <td>Sitaw</td>
+          <td>Sitaw is an herbaceous climbing plant grown for it strikingly long edible pods.</td>
+          <td>7 weeks</td>
+        </tr>
+        <tr id="pechay">
+          <td>Pechay</td>
+          <td>Pechay is an erect, biennial herb, growing about 15 to 30 centimeters tall in vegetative state.</td>
+          <td>5 weeks</td>
+        </tr>
+        <tr id="labanos">
+          <td>Labanos</td>
+          <td>Labanos is a coarse, annual crop plant. Roots are fleshy, pungent and variable in size and form.</td>
+          <td>3 weeks</td>
+        </tr>
+        <tr id="repolyo">
+          <td>Repolyo</td>
+          <td>Repolyo is the head-bearing or true cabbage, a biennial herb.</td>
+          <td>10 weeks</td>
+        </tr>
+        <tr id="mustasa">
+          <td>Mustasa</td>
+          <td>Mustasa is an erect, branched, smooth annual, 0.4 to 1 meter high.</td>
+          <td>5 weeks</td>
+        </tr> 
+        <tr id="spinach">
+          <td>Spinach</td>
+          <td>New Zealand spinach is an annual, spreading herb growing to 50 centimeters high.</td>
+          <td>6 weeks</td>
+        </tr>
+        <tr id="kalabasa">
+          <td>Kalabasa</td>
+          <td>Kalabasa is a coarse, prostrate or climbing, annual, herbaceous vine, reaching a length of 4 meters or more.</td>
+          <td>10 weeks</td>
+        </tr>
+        <tr id="mais">
+          <td>Mais</td>
+          <td>Mais is a very coarse, erect, tall grass, 1.5 to 2 meters high.</td>
+          <td>12 weeks</td>
+        </tr>
+        <tr id="pinya">
+          <td>Pinya</td>
+          <td>Pinya is a fruit bearing tropical plant with an erect stem, 0.5 to 1.5 meters high.</td>
+          <td>136 weeks</td>
+        </tr>
+        <tr id="kamote">
+          <td>Kamote</td>
+          <td>Kamote is a spreading, prostrate, herbaceous, smooth or somewhat hairy vine.</td>
+          <td>40 weeks</td>
+        </tr>
+        <tr id="sibuyas">
+          <td>Sibuyas</td>
+          <td>Sibuyas is a low herb, with leaves shorter than the scape, cylindric, hollow.</td>
+          <td>16 weeks</td>
+        </tr>
+        <tr id="bawang">
+          <td>Bawang</td>
+          <td>Bawang is a low herb, 30 to 60 centimeters high. True stem is much reduced. </td>
+          <td>18 weeks</td>
+        </tr>
+        <tr id="patatas">
+          <td>Patatas</td>
+          <td>Patatas is a perennial herb with rough, pinnate leaves.</td>
+          <td>20 weeks</td>
+        </tr>
+      </tbody>t
+  </table>
+</div>
+
+<footer>
+  <h3>BY: RESEARCH GROUP OF LPIHS</h3>
+</footer>
+
+<script>
+    place_name = [
+        "Agdangan",
+        "Candelaria",
+        "Lucban",
+        "Lucena",
+        "Sariaya",
+        "Tayabas",
+        "Tiaong"
+    ];
+
+    places = {
+      "agdangan": {
+        "title": "Agdangan", 
+        "lat": "13.885283",
+        "long": "121.939788"
+     },
+      "candelaria": {
+        "title": "Candelaria",
+        "lat": "13.928873",
+        "long":"121.432566"
+      },
+      "lucban": {
+        "title": "Lucban",
+        "lat": "14.136457",
+        "long": "121.559560"
+      },
+      "lucena":{
+        "title":"Lucena City",
+        "lat": "13.943681",
+        "long": "121.628303"
+      },
+      "sariaya":{
+        "title":"Sariaya",
+        "lat":"13.912081",
+        "long":"121.491531"
+      },
+      "tayabas":{
+        "title":"Tayabas City",
+        "lat":"13.912081",
+        "long":"121.491531"
+      },
+      "tiaong": {
+        "title": "Tiaong", 
+        "lat": "13.9541",
+        "long": "121.3393"
+     }
+    };
+
+    var lat=13.912081, lon=121.491531;
+    get_api_data();
+
+    function setPlace() {
+      dropdown = document.getElementById("places_choice");
+      v = dropdown.value;
+      console.log(places[v]);
+
+      document.getElementById("place_title").innerHTML = places[v].title;
+
+      // // Set lat lon here
+      lat = places[v].lat;
+      lon = places[v].long;
+
+      get_api_data();
+    }
+
+</script>
+
+</body>

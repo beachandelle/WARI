@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,700|Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="./js/library.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/modernizr.js"></script>
+
+</head>
+
+<body>
+<header>
+    <div>
+        <h1 id="place_title">CITY</h1>
+    </div>
+</header>
+
+<div class="welcome">
+    <h1>Weather Agri-Application for Real-time Information</h1>
+</div>
+<div class="se-pre-con"></div>
+<div class="custom-dropdown">
+    <select id="places_choice" onchange="setPlace()">
+        <option value="agdangan">Agdangan</option>
+        <option value="alabat">Alabat</option>
+        <option value="atimonan">Atimonan</option>
+        <option value="buenavista">Buenavista</option>
+        <option value="burdeos">Burdeos</option>
+        <option value="calauag">Calauag</option>
+        <option value="candelaria">Candelaria</option>
+        <option value="catanuan">Catanuan</option>
+        <option value="dolores">Dolores</option>
+        <option value="general luna">General Luna</option>
+        <option value="general nakar">General Nakar</option>
+        <option value="guinyangan">Guinyangan</option>
+        <option value="gumaca">Gumaca</option>
+        <option value="infanta">Infanta</option>
+        <option value="lucban">Lucban</option>
+        <option value="lucena">Lucena</option>
+        <option value="macalelon">Macalelon</option>
+        <option value="mauban">Mauban</option>
+        <option value="mulanay">Mulanay</option>
+        <option value="pagbilao">Pagbilao</option>
+        <option value="panukulan">Panukulan</option>
+        <option value="patnanungan">Patnanungan</option>
+        <option value="perez">Perez</option>
+        <option value="pitogo">Pitogo</option>
+        <option value="plaridel">Plaridel</option>
+        <option value="polilio">Polilio</option>
+        <option value="quezon">Quezon</option>
+        <option value="real">Real</option>
+        <option value="sampaloc">Sampaloc</option>
+        <option value="san andres">San Andres</option>
+        <option value="san antonio">San Antonio</option>
+        <option value="san francisco">San Francisco</option>
+        <option value="san narciso">San Narcisco</option>
+        <option value="sariaya">Sariaya</option>
+        <option value="tagkawayan">Tagkawayan</option>
+        <option value="tayabas">Tayabas</option>
+        <option value="tiaong">Tiaong</option>
+        <option value="unisan">Unisan</option>
+        <option value="baguio">Baguio</option>
+        <option value="south korea">South Korea</option>
+    </select>
+</div>
+
+<div>
+    <table id="weeks">
+        <thead>
+        <tr>
+            <th>Day</th>
+            <th><span class="short-text">Monday</span></th>
+            <th><span class="short-text">Tuesday</span></th>
+            <th><span class="short-text">Wednesday</span></th>
+            <th><span class="short-text">Thursday</span></th>
+            <th><span class="short-text">Friday</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Temp</th>
+            <td>26°</td>
+            <td>26°</td>
+            <td>24°</td>
+            <td>25°</td>
+            <td>26°</td>
+        </tr>
+        <tr>
+            <th>Humid</th>
+            <td>89</td>
+            <td>85</td>
+            <td>90</td>
+            <td>81</td>
+            <td>77</td>
+        </tr>
+        <tr>
+            <th>Rain</th>
+            <td>1</td>
+            <td>0</td>
+            <td>2</td>
+            <td>1</td>
+            <td>0p</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>Plants</th>
+            <th>Definition</th>
+            <th>Planting Time</th>
+        </tr>
+        </thead>
+        <tbody id="plants">
+        <tr id="okra">
+            <td>Okra</td>
+            <td>Okra is a coarse, erect, branched, more or less hairy, annual herb.</td>
+            <td>8 weeks</td>
+        </tr>
+        <tr id="patola">
+            <td>Patola</td>
+            <td>Patola, a vegetable, is a coarse, annual, herbaceous vine.</td>
+            <td>14 weeks</td>
+        </tr>
+        <tr id="talong">
+            <td>Talong</td>
+            <td>Talong is a coarse, usually branched, prickly or unarmed, erect, half-woody plant.</td>
+            <td>10 weeks</td>
+        </tr>
+        <tr id="upo">
+            <td>Upo</td>
+            <td>Upo is a coarse vine reaching a length of several meters.</td>
+            <td>10 weeks</td>
+        </tr>
+        <tr id="luya">
+            <td>Luya</td>
+            <td>Luya is an erect, smooth plant arising from thickened, very aromatic rootstocks. </td>
+            <td>32 weeks</td>
+        </tr>
+        <tr id="ampalaya">
+            <td>Ampalaya</td>
+            <td>Ampalaya is a climbing vine, nearly or quite smooth, annual vine.</td>
+            <td>10 weeks</td>
+        </tr>
+        <tr id="kamatis">
+            <td>Kamatis</td>
+            <td>Kamatis is a hairy annual herb, typically growing 1 to 3 meters in height, with ascending or spreading hairy and branched stems.</td>
+            <td>12 weeks</td>
+        </tr>
+        <tr id="sitaw">
+            <td>Sitaw</td>
+            <td>Sitaw is an herbaceous climbing plant grown for it strikingly long edible pods.</td>
+            <td>7 weeks</td>
+        </tr>
+        <tr id="pechay">
+            <td>Pechay</td>
+            <td>Pechay is an erect, biennial herb, growing about 15 to 30 centimeters tall in vegetative state.</td>
+            <td>5 weeks</td>
+        </tr>
+        <tr id="labanos">
+            <td>Labanos</td>
+            <td>Labanos is a coarse, annual crop plant. Roots are fleshy, pungent and variable in size and form.</td>
+            <td>3 weeks</td>
+        </tr>
+        <tr id="repolyo">
+            <td>Repolyo</td>
+            <td>Repolyo is the head-bearing or true cabbage, a biennial herb.</td>
+            <td>10 weeks</td>
+        </tr>
+        <tr id="mustasa">
+            <td>Mustasa</td>
+            <td>Mustasa is an erect, branched, smooth annual, 0.4 to 1 meter high.</td>
+            <td>5 weeks</td>
+        </tr>
+        <tr id="spinach">
+            <td>Spinach</td>
+            <td>New Zealand spinach is an annual, spreading herb growing to 50 centimeters high.</td>
+            <td>6 weeks</td>
+        </tr>
+        <tr id="kalabasa">
+            <td>Kalabasa</td>
+            <td>Kalabasa is a coarse, prostrate or climbing, annual, herbaceous vine, reaching a length of 4 meters or more.</td>
+            <td>10 weeks</td>
+        </tr>
+        <tr id="mais">
+            <td>Mais</td>
+            <td>Mais is a very coarse, erect, tall grass, 1.5 to 2 meters high.</td>
+            <td>12 weeks</td>
+        </tr>
+        <tr id="pinya">
+            <td>Pinya</td>
+            <td>Pinya is a fruit bearing tropical plant with an erect stem, 0.5 to 1.5 meters high.</td>
+            <td>136 weeks</td>
+        </tr>
+        <tr id="kamote">
+            <td>Kamote</td>
+            <td>Kamote is a spreading, prostrate, herbaceous, smooth or somewhat hairy vine.</td>
+            <td>40 weeks</td>
+        </tr>
+        <tr id="sibuyas">
+            <td>Sibuyas</td>
+            <td>Sibuyas is a low herb, with leaves shorter than the scape, cylindric, hollow.</td>
+            <td>16 weeks</td>
+        </tr>
+        <tr id="bawang">
+            <td>Bawang</td>
+            <td>Bawang is a low herb, 30 to 60 centimeters high. True stem is much reduced. </td>
+            <td>18 weeks</td>
+        </tr>
+        <tr id="patatas">
+            <td>Patatas</td>
+            <td>Patatas is a perennial herb with rough, pinnate leaves.</td>
+            <td>20 weeks</td>
+        </tr>
+        </tbody>t
+    </table>
+</div>
+
+<footer>
+    <h3>RESEARCH PROJECT 2020</h3>
+</footer>
+
+<script>
+    place_name = [
+        "Agdangan",
+        "Alabat",
+        "Atimonan",
+        "Buenavista",
+        "Burdeos",
+        "Calauag",
+        "Candelaria",
+        "Catanuan",
+        "Dolores",
+        "General Luna",
+        "General Nakar",
+        "Guinyangan",
+        "Gumaca",
+        "Infanta",
+        "Lucban",
+        "Lucena",
+        "Macalelon",
+        "Mauban",
+        "Mulanay",
+        "Pagbilao",
+        "Panukulan",
+        "Patnanungan",
+        "Perez",
+        "Pitogo",
+        "Plaridel",
+        "Polilio",
+        "Quezon",
+        "Real",
+        "Sampaloc",
+        "San andres",
+        "San antonio",
+        "San francisco",
+        "San narciso",
+        "Sariaya",
+        "Tagkawayan",
+        "Tayabas",
+        "Tiaong",
+        "Unisan",
+        "Baguio",
+        "South Korea",
+    ];
+
+    places = {
+      "agdangan": {
+        "title": "Agdangan", 
+        "lat": "13.87",
+        "long": "121.92",
+     },
+     "alabat": {
+        "title": "Alabat", 
+        "lat": "14.1",
+        "long": "122.02",
+     },
+     "atimonan": {
+        "title": "Atimonan", 
+        "lat": "14",
+        "long": "121.9",
+     },
+     "buenavista": {
+        "title": "Buenavista", 
+        "lat": "10.14",
+        "long": "123.24",
+     },
+     "burdeos": {
+        "title": "Burdeos", 
+        "lat": "14.84",
+        "long": "121.97",
+     },
+     "calauag": {
+        "title": "Calauag",
+        "lat": "13.96",
+        "long":"122.29",
+      },
+      "candelaria": {
+        "title": "Candelaria",
+        "lat": "13.93",
+        "long":"121.42",
+      },
+      "catanuan": {
+        "title": "Catanuan",
+        "lat": "13.59",
+        "long":"122.32",
+      },
+      "dolores": {
+        "title": "Dolores",
+        "lat": "14.01",
+        "long":"121.4"
+      },
+      "general luna": {
+        "title": "General Luna",
+        "lat": "13.69",
+        "long":"122.17",
+      },
+      "general nakar": {
+        "title": "General Nakar",
+        "lat": "14.76",
+        "long":"121.64",
+      },
+      "guinyangan": {
+        "title": "Guinyangan",
+        "lat": "13.830544",
+        "long": "122.4579",
+      },
+      "gumaca":{
+        "title":"Gumaca",
+        "lat": "13.9197",
+        "long": "122.1003",
+      },
+      "infanta":{
+        "title":"Infanta",
+        "lat":"14.7425",
+        "long":"121.6494",
+      },
+      "lucban":{
+        "title":"Lucban",
+        "lat":"14.1133",
+        "long":"121.55690",
+      },
+      "lucena": {
+        "title": "Lucena",
+        "lat": "13.9314",
+        "long":"121.6172",
+      },
+      "macalelon": {
+        "title": "Macalelon",
+        "lat": "13.7469",
+        "long":"122.1386",
+      },
+      "mauban": {
+        "title": "Mauban",
+        "lat": "14.1911",
+        "long":"121.7311",
+      },
+      "mulanay": {
+        "title": "Mulanay",
+        "lat": "13.5222",
+        "long":"122.4042",
+      },
+      "pagbilao": {
+        "title": "Pagbilao",
+        "lat": "13.975",
+        "long":"121.6919",
+      },
+      "panukulan": {
+        "title": "Panukulan",
+        "lat": "14.9333",
+        "long":"121.8144",
+      },
+      "patnanungan": {
+        "title": "Patnanungan",
+        "lat": "14.7833",
+        "long": "122.1833",
+      },
+      "perez":{
+        "title":"Perez",
+        "lat": "14.195",
+        "long": "121.9231",
+      },
+      "pitogo":{
+        "title":"Pitogo",
+        "lat":"13.7847",
+        "long":"122.0881",
+      },
+      "plaridel":{
+        "title":"Plaridel",
+        "lat":"14.8872",
+        "long":"120.8572",
+      },
+      "polilio":{
+        "title":"Polilio",
+        "lat":"14.728792",
+        "long":"121.933737",
+      },
+      "quezon":{
+        "title":"Quezon",
+        "lat":"15.5512",
+        "long":"120.8147",
+      },
+      "real":{
+        "title":"Real",
+        "lat":"14.6625",
+        "long":"121.6047",
+      },
+      "sampaloc":{
+        "title":"Sampaloc",
+        "lat":"14.5402",
+        "long":"121.3602",
+      },
+      "san andres":{
+        "title":"San Andres",
+        "lat":"13.3219",
+        "long":"122.6775",
+      },
+      "san antonio":{
+        "title":"San Antonio",
+        "lat":"15.2464",
+        "long":"120.8496",
+      },
+      "san francisco":{
+        "title":"San Francisco",
+        "lat":"15.3525",
+        "long":"120.8327",
+      },
+      "san narciso":{
+        "title":"San Narcisco",
+        "lat":"13.5703",
+        "long":"122.565",
+      },
+      "sariaya":{
+        "title":"Sariaya",
+        "lat":"13.9644",
+        "long":"121.53",
+      },
+      "tagkawayan":{
+        "title":"Tagkawayan",
+        "lat":"13.9657",
+        "long":"122.5394",
+      },
+      "tayabas":{
+        "title":"Tayabas",
+        "lat":"14.0289",
+        "long":"121.5911",
+      },
+      "tiaong": {
+        "title": "Tiaong", 
+        "lat": "13.9536",
+        "long": "121.3161",
+     },
+     "unisan":{
+        "title":"Unisan",
+        "lat":"13.8392",
+        "long":"121.97831"
+      },
+      "baguio":{
+        "title":"Baguio",
+        "lat":"16.4023",
+        "long":"120.5960"
+      },
+      "south korea":{
+        "title":"South Korea",
+        "lat":"35.9078",
+        "long":"127.7669"
+      }
+    };
+
+    var lat=14.0289, lon=121.5911;
+    get_api_data();
+
+    function setPlace() {
+      dropdown = document.getElementById("places_choice");
+      v = dropdown.value;
+      console.log(places[v]);
+
+      document.getElementById("place_title").innerHTML = places[v].title;
+
+      // // Set lat lon here
+      lat = places[v].lat;
+      lon = places[v].long;
+
+      get_api_data();
+    }
+
+</script>
+
+</body>
